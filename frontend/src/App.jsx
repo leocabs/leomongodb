@@ -24,7 +24,7 @@ const App = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://leomongodb.vercel.app/users/register', formData);
+      const response = await axios.post('https://leomongodb.vercel.app/api/users/register', formData);
       alert('Account created successfully');
       console.log(response.data);
     } catch (error) {
@@ -37,7 +37,7 @@ const App = () => {
     const fetchUsers = async () => {
       try {
         // Change URL to the correct endpoint
-        const response = await axios.get('https://leomongodb.vercel.app/users');
+        const response = await axios.get('https://leomongodb.vercel.app/api/users');
         setUsers(response.data);  // Store the list of users in the state
       } catch (error) {
         setErrorMessage(error.response ? error.response.data.message : 'Something went wrong');
