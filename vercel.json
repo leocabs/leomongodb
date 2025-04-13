@@ -1,0 +1,28 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "backend/api/**/*.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "frontend/package.json",
+        "use": "@vercel/react"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/users/register",
+        "dest": "backend/api/users.js"
+      },
+      {
+        "src": "/api/users",
+        "dest": "backend/api/users.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "frontend/$1"
+      }
+    ]
+  }
+  
