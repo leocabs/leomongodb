@@ -1,5 +1,5 @@
-import connectDB from './lib/connectDB';  // <-- adjust if your path is different
-import User from './models/User';
+import connectDB from './lib/connectDB';
+import User from '../models/User';
 
 export default async function handler(req, res) {
   // CORS Headers
