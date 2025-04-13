@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-const User = require('../../models/user');
+const User = require('../models/User');
 require('dotenv').config();
 
 // Mongo connection
@@ -27,7 +27,7 @@ module.exports = async (req, res) => {
       const users = await User.find();
       res.status(200).json(users);
     } catch (error) {
-      res.status(500).json({ message: error.message });
+      res.status(500).json({ message: 'Error fetching users' });
     }
   } else {
     res.status(405).json({ message: 'Method Not Allowed' });
